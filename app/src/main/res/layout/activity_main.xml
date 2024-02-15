@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal" >
+
+
+
+    <TableLayout android:layout_width="500dp" android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:gravity="right|center"
+            android:text="0"
+            android:fontFamily="@font/kosugi"
+            android:textColor="@color/black"
+            android:textSize="40pt" />
+
+        <TableRow android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1pt">
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="0"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:id="@+id/b0"
+                android:onClick="numberEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text=","
+                android:onClick="numberEvent"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:id="@+id/bDot"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bPi"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_marginStart="1pt"
+                android:layout_marginEnd="1pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:onClick="numberEvent"
+                android:text="π"
+                android:textSize="10pt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="+"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/upper"
+                android:id="@+id/bPlus"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="sin(x)"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1.5"
+                android:background="@color/upper"
+                android:id="@+id/bSin"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="C"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/upper"
+                android:id="@+id/bClear"
+                android:onClick="clear"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="="
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="2"
+                android:background="@color/equals"
+                android:id="@+id/bEquals"
+                android:onClick="calculateResult"/>
+
+
+        </TableRow>
+        <TableRow android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1pt">
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="7"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:id="@+id/b7"
+                android:onClick="numberEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="8"
+                android:onClick="numberEvent"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:id="@+id/b8"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/b9"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_marginStart="1pt"
+                android:layout_marginEnd="1pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:onClick="numberEvent"
+                android:text="9"
+                android:textSize="10pt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="-"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/upper"
+                android:id="@+id/bMinus"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="cos(x)"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1.5"
+                android:background="@color/upper"
+                android:id="@+id/bCos"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="√x"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/upper"
+                android:id="@+id/bSquareRoot"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="n√x"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="2"
+                android:background="@color/upper"
+                android:id="@+id/bRoot"
+                android:onClick="operatorEvent"/>
+
+
+        </TableRow>
+        <TableRow android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1pt">
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="4"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:id="@+id/b4"
+                android:onClick="numberEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="5"
+                android:onClick="numberEvent"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:id="@+id/b5"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/b6"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_marginStart="1pt"
+                android:layout_marginEnd="1pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:onClick="numberEvent"
+                android:text="6"
+                android:textSize="10pt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="×"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/upper"
+                android:id="@+id/bMultiply"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="tan(x)"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1.5"
+                android:background="@color/upper"
+                android:id="@+id/bTan"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="x^2"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/upper"
+                android:id="@+id/bPowerTwo"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="x^n"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="2"
+                android:background="@color/upper"
+                android:id="@+id/bPower"
+                android:onClick="operatorEvent"/>
+
+
+        </TableRow>
+        <TableRow android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1pt">
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="1"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:id="@+id/b1"
+                android:onClick="numberEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="2"
+                android:onClick="numberEvent"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:id="@+id/b2"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/b3"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_marginStart="1pt"
+                android:layout_marginEnd="1pt"
+                android:layout_weight="1"
+                android:background="@color/lower"
+                android:onClick="numberEvent"
+                android:text="3"
+                android:textSize="10pt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="÷"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/upper"
+                android:id="@+id/bDivide"
+                android:onClick="operatorEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="ctg(x)"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1.5"
+                android:background="@color/upper"
+                android:id="@+id/bCtg"
+                android:onClick="operatorEvent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="⟸"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/upper"
+                android:id="@+id/bBackspace"
+                android:onClick="numberEvent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="+/-"
+                android:textSize="10pt"
+                android:layout_marginEnd="1pt"
+                android:layout_marginStart="1pt"
+                android:layout_width="15dp"
+                android:layout_height="30pt"
+                android:layout_weight="2"
+                android:background="@color/upper"
+                android:id="@+id/bChange"
+                android:onClick="numberEvent"/>
+
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:text="История запросов:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="@font/kosugi"
+            android:gravity="center"
+            ></TextView>
+        <ListView
+            android:id="@+id/calcHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#00000000"
+            android:dividerHeight="10dp"
+            android:fontFamily="@font/kosugi"
+            android:layout_marginRight="5dp"
+            >
+        </ListView>
+    </LinearLayout>>
+
+
+
+</LinearLayout>
